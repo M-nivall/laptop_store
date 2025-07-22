@@ -20,8 +20,8 @@ const Product = () => {
       <div className='max-w-screen-xl ml-20 my-10 flex gap-10'>
         <div className='w-2/5 relative'>
           <img 
-          className='w-full h-[550px] object-cover'
-          src={details.image} 
+          className='w-full h-full object-cover'
+          src={`http://localhost/laptopstore/react/product_images/${details.image}`}
           alt='productImage'
           />
           <div className='absolute top-4 right-0'>
@@ -37,10 +37,10 @@ const Product = () => {
             <h2 className='text-4xl font-semibold'>{details.title}</h2>
             <div className='flex items-center gap-4 mt-3'>
               <p className='line-through font-base text-gray-500'>
-                ${details.oldPrice}
+                Ksh {details.oldPrice}
               </p>
               <p className='text-2xl font-medium text-gray-900'>
-                ${details.price}
+                Ksh {details.price}
               </p>
             </div>
           </div>

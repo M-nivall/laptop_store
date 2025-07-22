@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Cart from "./pages/Cart";
+import { CategoryProvider } from "./components/CategoryContext";
 import {
   createBrowserRouter,
   Outlet,
@@ -12,6 +13,8 @@ import {
 import { productsData } from "./api/Api";
 import Product from "./components/Product";
 import Login from "./pages/Login";
+import AboutUs from "./pages/AboutUs";
+import Contacts from "./pages/Contacts";
 const Layout = () =>{
   return(
     <div>
@@ -43,6 +46,14 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element:<Login/>,
+      },
+      {
+        path:"/aboutUs",
+        element:<AboutUs/>,
+      },
+      {
+        path:"/contacts",
+        element:<Contacts/>,
       }
     ],
   },
@@ -50,7 +61,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div>
-    <RouterProvider router={router}/>
+    <CategoryProvider>
+      <RouterProvider router={router} />
+    </CategoryProvider>
     </div>
   );
 }

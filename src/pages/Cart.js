@@ -59,14 +59,14 @@ const Cart = () => {
 
   try {
     // ✅ Step 1: Submit order to backend
-    const response = await axios.post("https://c2cb-197-156-143-231.ngrok-free.app/reactshopping/react/client/submit_order.php", payload);
+    const response = await axios.post("https://5c49ff9aa359.ngrok-free.app/laptopstore/react/client/submit_order.php", payload);
 
     if (response.data.success) {
       const orderId = response.data.order_id; // ✅ Get the order ID
       toast.success(`Order #${orderId} saved! Initiating M-Pesa STK push...`);
 
       // ✅ Step 2: Send STK push with orderId included
-      const stkResponse = await axios.post("https://c2cb-197-156-143-231.ngrok-free.app/reactshopping/react/client/stk_push.php", {
+      const stkResponse = await axios.post("https://5c49ff9aa359.ngrok-free.app/laptopstore/react/client/stk_push.php", {
         //phone: phoneNumber,  // use this for the real paybill and style the following sandbox
         phone: "254708374149", // ✅ Safaricom sandbox test number
         amount: parseFloat(totalAmt),
@@ -105,7 +105,7 @@ const Cart = () => {
             <p className='flex items-center gap-4 text-base'>
               Subtotal{" "}
               <span className='font-titleFont font-bold text-lg'>
-                $ {totalAmt}
+                Ksh {totalAmt}
               </span>
             </p>
             <p className='flex items-start gap-4 text-base'>
@@ -116,7 +116,7 @@ const Cart = () => {
             </p>
           </div>
           <p className='font-titleFont font-semibold flex justify-between mt-5'>
-            Total <span className='text-xl text-bold'>$ {totalAmt}</span>
+            Total <span className='text-xl text-bold'>Ksh {totalAmt}</span>
           </p>
 
           {/* Only show this if payNow is false */}

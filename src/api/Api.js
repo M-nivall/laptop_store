@@ -1,8 +1,6 @@
 import axios from "axios";
 
-export async function productsData(){
-    const products = await axios.get(
-        "https://fakestoreapiserver.reactbd.com/products"
-    );
-    return products;
+export async function productsData() {
+    const products = await axios.get("http://localhost/laptopstore/react/products.php");
+    return products.data;
 }

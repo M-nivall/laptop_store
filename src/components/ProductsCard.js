@@ -25,7 +25,7 @@ const ProductsCard = ({product}) => {
       <div onClick={handleDetails} className='w-full h-96 cursor-pointer overflow-hidden'>
         <img 
           className='w-full h-full object-cover group-hover:scale-110 duration-500'
-          src={product.image} 
+          src={`http://localhost/laptopstore/react/product_images/${product.image}`}
           alt='productImage'/>
       </div>
       <div className='w-full border-[1px] px-2 py-4'>
@@ -37,8 +37,8 @@ const ProductsCard = ({product}) => {
           </div>
           <div className='flex justify-end gap-2 relative overflow-hidden w-28 text-sm'>
             <div className='flex gap-2 transform group-hover:translate-x-24'>
-              <p className='line-through text-gray-500'>${product.oldPrice}</p>
-              <p className='font-semibold'>${product.price}</p>
+              {/* <p className='line-through text-gray-500'>Ksh{product.oldPrice}</p> */}
+              <p className='font-semibold'>Ksh {product.price}</p>
             </div>
             <p onClick={()=>dispatch(addToCart({
               _id:product._id,

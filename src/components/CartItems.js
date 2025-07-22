@@ -32,12 +32,12 @@ const CartItems = () => {
                             cursor-pointer duration-300' />
                                 <img
                                     className='w-32 h-32 object-cover'
-                                    src={item.image}
+                                    src={`http://localhost/laptopstore/react/product_images/${item.image}`}
                                     alt='productImage'
                                 />
                             </div>
                             <h2 className='w-52'>{item.title}</h2>
-                            <p className='w-10'>${item.price}</p>
+                            <p className='w-12 mr-3'>Ksh{item.price}</p>
 
                             <div className='w-52 flex items-center justify-between text-gray-500 gap-4 border p-3'>
                                 <p className='text-sm'>Quantity</p>
@@ -79,7 +79,7 @@ const CartItems = () => {
                                     </span>
                                 </div>
                             </div>
-                            <p className='w-14'>${item.quantity * item.price}</p>
+                            <p className='w-14'>Ksh{item.quantity * item.price}</p>
                         </div>
                     ))
                 }

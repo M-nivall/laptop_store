@@ -20,7 +20,7 @@ const Product = () => {
       <div className='max-w-screen-xl ml-20 my-10 flex gap-10'>
         <div className='w-2/5 relative'>
           <img 
-          className='w-full h-full object-cover'
+          className='w-full h-full objvect-cover'
           src={`http://localhost/laptopstore/react/product_images/${details.image}`}
           alt='productImage'
           />

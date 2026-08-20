@@ -23,7 +23,6 @@ const Home = () => {
       <Products products={filteredProducts} />
     </div>
   );
-  
 };
 
 export default Home;

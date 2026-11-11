@@ -31,7 +31,7 @@ const Contacts = () => {
       console.log(result);
 
       if (response.ok) {
-        toast.success('✅ Message sent successfully!');
+        toast.success('✅ Message Sent successfully!');
         setFormData({ name: '', email: '', message: '', subject: '' });
         setStatus('');
       } else {
